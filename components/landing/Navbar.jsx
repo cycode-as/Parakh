@@ -39,11 +39,11 @@ export default function Navbar() {
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Link href="/login"
+            <Link href="/dashboard"
               className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors">
               Login
             </Link>
-            <Link href="/signup"
+            <Link href="/dashboard"
               className="px-5 py-2.5 text-sm font-semibold bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">
               Sign Up Free
             </Link>
@@ -74,8 +74,8 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-3 border-t border-gray-100 flex flex-col gap-2">
-            <Link href="/login" className="block text-center px-4 py-2.5 text-sm font-semibold text-gray-700 border border-gray-200 rounded-xl hover:bg-gray-50">Login</Link>
-            <Link href="/signup" className="block text-center px-4 py-2.5 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700">Sign Up Free</Link>
+            <Link href="/dashboard" className="block text-center px-4 py-2.5 text-sm font-semibold text-gray-700 border border-gray-200 rounded-xl hover:bg-gray-50">Login</Link>
+            <Link href="/dashboard" className="block text-center px-4 py-2.5 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700">Sign Up Free</Link>
           </div>
         </div>
       )}

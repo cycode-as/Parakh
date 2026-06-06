@@ -33,13 +33,10 @@ export default function Hero() {
                 </svg>
                 Analyze Opportunity
               </Link>
-              <button
+              <Link href="/dashboard"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-gray-700 font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all text-base">
-                <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-                Watch Demo
-              </button>
+                Go to Dashboard
+              </Link>
             </div>
 
             {/* Social proof */}

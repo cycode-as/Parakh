@@ -45,10 +45,10 @@ export default function AnalyzePage() {
       const data = await res.json();
       if (!res.ok) {
         // Give a friendlier message for quota errors
-        const isQuota = res.status === 429 || data.error?.toLowerCase().includes('quota') || data.error?.toLowerCase().includes('exhausted');
+        const isQuota = res.status === 429 || data.error?.toLowerCase().includes('quota') || data.error?.toLowerCase().includes('exhausted') || data.error?.toLowerCase().includes('rate limit');
         setApiError(
           isQuota
-            ? '⏳ API quota reached. All free-tier Gemini models are temporarily exhausted. Please wait a few minutes and try again, or check your quota at https://ai.dev/rate-limit'
+            ? '⏳ API quota reached. All models are temporarily exhausted. Please wait a few minutes and try again.'
             : data.error || 'Analysis failed. Please try again.'
         );
         setLoading(false);
