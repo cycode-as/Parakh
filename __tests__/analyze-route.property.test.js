@@ -19,7 +19,6 @@
  * Using @jest-environment node ensures these native globals are available.
  */
 
-import '@anthropic-ai/sdk/shims/node'
 import * as fc from 'fast-check'
 import { POST } from '../app/api/analyze/route.js'
 

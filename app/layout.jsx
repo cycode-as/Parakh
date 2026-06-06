@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'CareerShield AI — Find Opportunities You Can Trust',
+  title: 'Parakh — Find Opportunities You Can Trust',
   description: 'Analyze internships and jobs using your Resume, GitHub, LinkedIn, and Portfolio.',
 }
 

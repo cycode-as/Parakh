@@ -43,12 +43,22 @@ export default function AnalyzePage() {
         body: JSON.stringify({ jobText: form.jobText, resumeText: form.resumeText }),
       });
       const data = await res.json();
-      if (!res.ok) { setApiError(data.error || 'Analysis failed'); setLoading(false); return; }
+      if (!res.ok) {
+        // Give a friendlier message for quota errors
+        const isQuota = res.status === 429 || data.error?.toLowerCase().includes('quota') || data.error?.toLowerCase().includes('exhausted');
+        setApiError(
+          isQuota
+            ? '⏳ API quota reached. All free-tier Gemini models are temporarily exhausted. Please wait a few minutes and try again, or check your quota at https://ai.dev/rate-limit'
+            : data.error || 'Analysis failed. Please try again.'
+        );
+        setLoading(false);
+        return;
+      }
       // Store result and navigate to results page
       sessionStorage.setItem('analysisResult', JSON.stringify(data));
       router.push('/dashboard/results');
     } catch {
-      setApiError('Network error. Please check your connection.');
+      setApiError('Network error. Please check your connection and try again.');
       setLoading(false);
     }
   }
@@ -82,8 +92,9 @@ export default function AnalyzePage() {
 
           {/* API error */}
           {apiError && (
-            <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl px-4 py-3" role="alert">
-              {apiError}
+            <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl px-4 py-3 leading-relaxed" role="alert">
+              <p className="font-semibold mb-0.5">Analysis failed</p>
+              <p>{apiError}</p>
             </div>
           )}
 
