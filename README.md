@@ -20,7 +20,7 @@
 - [Testing](#testing)
 - [Contributing](#contributing)
 
-**LINK**: parakh-j70rrjdyq-cycode-as-projects.vercel.app
+**LINK**: parakh-kappa.vercel.app
 
  📝 Description
 
