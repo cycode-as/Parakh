@@ -37,8 +37,8 @@ Build a single-page Next.js 14 App Router application that accepts a job descrip
     - Use `fc.constantFrom('apply', 'upskill', 'avoid')`; assert each value returns the correct hex
     - File: `__tests__/colors.property.test.js`
 
-- [ ] 3. Implement the prompt builder and demo presets
-  - [-] 3.1 Create `lib/prompt.js` exporting `buildPrompt(jobText, resumeText)` with the exact prompt template from the design, including all scam-signal hints and the 14-field JSON schema example
+- [x] 3. Implement the prompt builder and demo presets
+  - [x] 3.1 Create `lib/prompt.js` exporting `buildPrompt(jobText, resumeText)` with the exact prompt template from the design, including all scam-signal hints and the 14-field JSON schema example
     - _Requirements: 3.2_
   - [x] 3.2 Create `lib/presets.js` exporting `PRESETS.fake` and `PRESETS.real` with the exact `jobText` and `resumeText` seed data from the design
     - _Requirements: 2.1–2.5, 12.1–12.3_
@@ -72,14 +72,14 @@ Build a single-page Next.js 14 App Router application that accepts a job descrip
 - [x] 5. Checkpoint — Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 6. Implement `InputForm.jsx`
+- [x] 6. Implement `InputForm.jsx`
   - [x] 6.1 Create `components/InputForm.jsx` with two labeled textareas (job description, resume), both with `min-height: 200px`, `maxLength={20000}`, and visible labels above each textarea
     - Accept props: `jobText`, `resumeText`, `onJobTextChange`, `onResumeTextChange`, `onSubmit`, `disabled`, `jobRef`
     - _Requirements: 1.1–1.4_
-  - [ ] 6.2 Add client-side validation to `InputForm.jsx`: on submit, trim both fields; if either is empty/whitespace-only, set per-field inline error messages and block the `onSubmit()` call
+  - [x] 6.2 Add client-side validation to `InputForm.jsx`: on submit, trim both fields; if either is empty/whitespace-only, set per-field inline error messages and block the `onSubmit()` call
     - Render the "Analyze →" full-width submit button; disable it when `disabled=true`
     - _Requirements: 1.5, 1.6_
-  - [~] 6.3 Write property test for whitespace validation — Property 1: Whitespace-only inputs are rejected
+  - [x] 6.3 Write property test for whitespace validation — Property 1: Whitespace-only inputs are rejected
     - **Property 1: Whitespace-only inputs are rejected**
     - **Validates: Requirements 1.5**
     - Generator: `fc.stringMatching(/^\s+$/)` for invalid; `fc.string().filter(s => s.trim().length > 0)` for valid
@@ -87,58 +87,58 @@ Build a single-page Next.js 14 App Router application that accepts a job descrip
     - Assert `isValidInput` returns `false` for all-whitespace and `true` for strings with content
     - File: `__tests__/validation.property.test.js`
 
-- [ ] 7. Implement `LoadingState.jsx`
-  - [~] 7.1 Create `components/LoadingState.jsx` that cycles through the four step messages using `setInterval` at ~1500ms, displays a spinner animation alongside the current message, and cleans up the interval on unmount
+- [x] 7. Implement `LoadingState.jsx`
+  - [x] 7.1 Create `components/LoadingState.jsx` that cycles through the four step messages using `setInterval` at ~1500ms, displays a spinner animation alongside the current message, and cleans up the interval on unmount
     - Messages in order: "Scanning job for red flags...", "Reading your resume...", "Comparing skills...", "Generating your report..."
     - Accept props: `active: boolean`
     - _Requirements: 4.1–4.3_
-  - [~] 7.2 Write property test for loading message cycling — Property 6: Loading message cycling
+  - [x] 7.2 Write property test for loading message cycling — Property 6: Loading message cycling
     - **Property 6: Loading message cycling covers all messages and repeats correctly**
     - **Validates: Requirements 4.3**
     - Extract the index-selection logic `getMessageAtTick(n)` as a pure function; use `fc.nat()` to test that `getMessageAtTick(n) === MESSAGES[n % MESSAGES.length]` for all N
     - File: `__tests__/loading.property.test.js`
 
-- [ ] 8. Implement `TrustCard.jsx`
-  - [~] 8.1 Create `components/TrustCard.jsx` that renders `trust_score` as a large primary number colored via `getScoreColor`, `risk_level` as a color-coded badge via `getRiskColor`, up to 5 `red_flags` as bullet points (with "+N more" overflow indicator when the array exceeds 5), and all `positive_signals` as bullet points (with "No positive signals found" when empty)
+- [x] 8. Implement `TrustCard.jsx`
+  - [x] 8.1 Create `components/TrustCard.jsx` that renders `trust_score` as a large primary number colored via `getScoreColor`, `risk_level` as a color-coded badge via `getRiskColor`, up to 5 `red_flags` as bullet points (with "+N more" overflow indicator when the array exceeds 5), and all `positive_signals` as bullet points (with "No positive signals found" when empty)
     - Accept props: `trust_score`, `risk_level`, `red_flags`, `positive_signals`
     - _Requirements: 5.1–5.6_
-  - [~] 8.2 Write property test for red flags cap — Property 7: Red flags capped at 5
+  - [x] 8.2 Write property test for red flags cap — Property 7: Red flags capped at 5
     - **Property 7: Red flags list is always capped at 5 displayed items**
     - **Validates: Requirements 5.5**
     - Use `fc.array(fc.string(), { minLength: 0, maxLength: 20 })`; render `TrustCard` with React Testing Library; assert rendered bullet count equals `Math.min(5, arr.length)` and overflow indicator is present iff `arr.length > 5`
     - File: `__tests__/TrustCard.property.test.js`
 
-- [ ] 9. Implement `FitCard.jsx`
-  - [~] 9.1 Create `components/FitCard.jsx` that renders `fit_score` as a large primary number colored via `getScoreColor`, `fit_summary` as a caption beneath the score, and placeholder text for any null/missing fields
+- [x] 9. Implement `FitCard.jsx`
+  - [x] 9.1 Create `components/FitCard.jsx` that renders `fit_score` as a large primary number colored via `getScoreColor`, `fit_summary` as a caption beneath the score, and placeholder text for any null/missing fields
     - Accept props: `fit_score`, `fit_summary`
     - _Requirements: 6.1–6.6_
 
-- [ ] 10. Implement `SkillGap.jsx`
-  - [~] 10.1 Create `components/SkillGap.jsx` with a two-column layout ("You have" / "Job requires"), rendering `student_skills` on the left and `required_skills` on the right; any skill in `required_skills` that appears in `missing_skills` must be rendered with color `#dc2626`
+- [x] 10. Implement `SkillGap.jsx`
+  - [x] 10.1 Create `components/SkillGap.jsx` with a two-column layout ("You have" / "Job requires"), rendering `student_skills` on the left and `required_skills` on the right; any skill in `required_skills` that appears in `missing_skills` must be rendered with color `#dc2626`
     - Accept props: `student_skills`, `required_skills`, `missing_skills`, `recommended_projects`
     - _Requirements: 7.1, 7.2_
-  - [~] 10.2 Add the `recommended_projects` section below the skill columns: render each project's `name` (bold) and `reason`; show placeholder for a missing `name` or `reason`; render section header with no entries when the array is empty
+  - [x] 10.2 Add the `recommended_projects` section below the skill columns: render each project's `name` (bold) and `reason`; show placeholder for a missing `name` or `reason`; render section header with no entries when the array is empty
     - _Requirements: 7.3, 7.4_
-  - [~] 10.3 Write property test for missing skills highlighting — Property 8: Missing skills highlighted in red, present skills not
+  - [x] 10.3 Write property test for missing skills highlighting — Property 8: Missing skills highlighted in red, present skills not
     - **Property 8: Missing skills are highlighted in red, present skills are not**
     - **Validates: Requirements 7.2**
     - Generator: `fc.array(fc.string())` for `required_skills`; derive `missing_skills` as a random subset; render `SkillGap` with React Testing Library; assert each missing skill has `color: rgb(220, 38, 38)` and no non-missing skill does
     - File: `__tests__/SkillGap.property.test.js`
 
-- [ ] 11. Implement `ActionCard.jsx`
-  - [~] 11.1 Create `components/ActionCard.jsx` that renders `recommendation` as a large pill badge with color from `getRecommendationColor`, and `success_probability`, `prep_time`, and `reasoning` as labeled fields with placeholder text for any missing/null value
+- [x] 11. Implement `ActionCard.jsx`
+  - [x] 11.1 Create `components/ActionCard.jsx` that renders `recommendation` as a large pill badge with color from `getRecommendationColor`, and `success_probability`, `prep_time`, and `reasoning` as labeled fields with placeholder text for any missing/null value
     - Accept props: `recommendation`, `success_probability`, `prep_time`, `reasoning`
     - _Requirements: 8.1–8.3_
 
-- [ ] 12. Wire everything together in `app/page.jsx`
-  - [~] 12.1 Replace the placeholder `app/page.jsx` with the full state-machine implementation: `phase` state (`idle` | `loading` | `result`), `jobText`/`resumeText` controlled inputs, `result`, and `error` state; wire `onLoadPreset` to populate both textareas and focus `jobRef`
+- [x] 12. Wire everything together in `app/page.jsx`
+  - [x] 12.1 Replace the placeholder `app/page.jsx` with the full state-machine implementation: `phase` state (`idle` | `loading` | `result`), `jobText`/`resumeText` controlled inputs, `result`, and `error` state; wire `onLoadPreset` to populate both textareas and focus `jobRef`
     - _Requirements: 2.1–2.5, 4.1, 4.2_
-  - [~] 12.2 Implement the `handleSubmit` function in `app/page.jsx`: set phase to `loading`, POST to `/api/analyze`, on success set phase to `result` and store result, on any error set phase to `idle` and display the error banner with re-enabled submit button
+  - [x] 12.2 Implement the `handleSubmit` function in `app/page.jsx`: set phase to `loading`, POST to `/api/analyze`, on success set phase to `result` and store result, on any error set phase to `idle` and display the error banner with re-enabled submit button
     - _Requirements: 3.1, 4.1, 4.4, 4.5_
-  - [~] 12.3 Render all four report cards (`TrustCard`, `FitCard`, `SkillGap`, `ActionCard`) in the `result` phase, stacked vertically below the input form, passing the correct fields from the `result` object to each card's props
+  - [x] 12.3 Render all four report cards (`TrustCard`, `FitCard`, `SkillGap`, `ActionCard`) in the `result` phase, stacked vertically below the input form, passing the correct fields from the `result` object to each card's props
     - _Requirements: 5.1, 6.1, 7.1, 8.1, 10.3_
-  - [~] 12.4 Add the two demo preset buttons above `InputForm` in `app/page.jsx`, wired to `PRESETS.fake` and `PRESETS.real` from `lib/presets.js`; clicking a button overwrites textareas and focuses the job textarea
+  - [x] 12.4 Add the two demo preset buttons above `InputForm` in `app/page.jsx`, wired to `PRESETS.fake` and `PRESETS.real` from `lib/presets.js`; clicking a button overwrites textareas and focuses the job textarea
     - _Requirements: 2.1–2.5_
 
-- [~] 13. Final checkpoint — Ensure all tests pass
+- [x] 13. Final checkpoint — Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
