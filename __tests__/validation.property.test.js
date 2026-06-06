@@ -1,4 +1,4 @@
-// Feature: careershield-ai, Property 1: Whitespace-only inputs are rejected
+// Feature: parakh, Property 1: Whitespace-only inputs are rejected
 
 import * as fc from 'fast-check';
 import { isValidInput } from '../lib/validation.js';

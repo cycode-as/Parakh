@@ -1,4 +1,4 @@
-// Feature: careershield-ai, Property 7: Red flags list is always capped at 5 displayed items
+// Feature: parakh, Property 7: Red flags list is always capped at 5 displayed items
 
 import * as fc from 'fast-check'
 import { render, screen } from '@testing-library/react'

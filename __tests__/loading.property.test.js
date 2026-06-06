@@ -1,4 +1,4 @@
-// Feature: careershield-ai, Property 6: Loading message cycling covers all messages and repeats correctly
+// Feature: parakh, Property 6: Loading message cycling covers all messages and repeats correctly
 
 import * as fc from 'fast-check'
 import { MESSAGES, getMessageAtTick } from '../components/LoadingState.jsx'

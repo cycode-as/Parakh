@@ -1,4 +1,4 @@
-// Feature: careershield-ai, Property 2: Score color mapping is correct for all values
+// Feature: parakh, Property 2: Score color mapping is correct for all values
 
 import * as fc from 'fast-check'
 import { getScoreColor } from '../lib/colors.js'
@@ -66,7 +66,7 @@ describe('getScoreColor — Property 2: Score color mapping is correct for all v
   })
 })
 
-// Feature: careershield-ai, Property 3: Recommendation color mapping is exhaustive and correct
+// Feature: parakh, Property 3: Recommendation color mapping is exhaustive and correct
 
 import { getRecommendationColor } from '../lib/colors.js'
 

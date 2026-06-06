@@ -5,7 +5,7 @@ const testimonials = [
     avatar: 'RS',
     color: 'bg-blue-500',
     stars: 5,
-    text: 'I almost fell for a fake Amazon internship that asked for a ₹999 "registration fee". CareerShield caught it instantly with a Trust Score of 18. Saved me money and time!',
+    text: 'I almost fell for a fake Amazon internship that asked for a ₹999 "registration fee". Parakh caught it instantly with a Trust Score of 18. Saved me money and time!',
     company: 'Now at Flipkart',
   },
   {
@@ -32,7 +32,7 @@ const testimonials = [
     avatar: 'SR',
     color: 'bg-amber-500',
     stars: 5,
-    text: 'As an ECE student pivoting to software, I had no idea which jobs were realistic for me. CareerShield\'s fit scores helped me target the right opportunities and land my first offer.',
+    text: 'As an ECE student pivoting to software, I had no idea which jobs were realistic for me. Parakh\'s fit scores helped me target the right opportunities and land my first offer.',
     company: 'Interned at Infosys',
   },
   {
@@ -41,7 +41,7 @@ const testimonials = [
     avatar: 'KP',
     color: 'bg-pink-500',
     stars: 5,
-    text: 'Used CareerShield for every application this placement season. The APPLY / UPSKILL / AVOID recommendation is brutally honest — and exactly what I needed to focus my prep.',
+    text: 'Used Parakh for every application this placement season. The APPLY / UPSKILL / AVOID recommendation is brutally honest — and exactly what I needed to focus my prep.',
     company: 'Placed at Microsoft',
   },
   {
@@ -50,7 +50,7 @@ const testimonials = [
     avatar: 'DK',
     color: 'bg-cyan-500',
     stars: 5,
-    text: 'Three of my friends got scammed on LinkedIn last year. I shared CareerShield with my entire department. Now everyone uses it before applying anywhere. It\'s essential.',
+    text: 'Three of my friends got scammed on LinkedIn last year. I shared Parakh with my entire department. Now everyone uses it before applying anywhere. It\'s essential.',
     company: 'Joined Accenture',
   },
 ];

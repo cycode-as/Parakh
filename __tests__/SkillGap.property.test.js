@@ -1,4 +1,4 @@
-// Feature: careershield-ai, Property 8: Missing skills are highlighted in red, present skills are not
+// Feature: parakh, Property 8: Missing skills are highlighted in red, present skills are not
 
 import * as fc from 'fast-check'
 import { render, screen, within } from '@testing-library/react'

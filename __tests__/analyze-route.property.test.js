@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  *
- * Feature: careershield-ai, Property 5: API route returns 400 for any malformed request body
+ * Feature: parakh, Property 5: API route returns 400 for any malformed request body
  *
  * Validates: Requirements 3.6
  *

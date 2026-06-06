@@ -53,7 +53,7 @@ export default function Features() {
             Powerful features for <span className="text-blue-600">smart students</span>
           </h2>
           <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
-            Stop guessing. Start knowing. CareerShield AI gives you data-driven insights before you hit apply.
+            Stop guessing. Start knowing. Parakh AI gives you data-driven insights before you hit apply.
           </p>
         </div>
 

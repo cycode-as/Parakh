@@ -1,4 +1,4 @@
-// Feature: careershield-ai, Property 4: Schema validation correctly accepts and rejects AnalysisResult objects
+// Feature: parakh, Property 4: Schema validation correctly accepts and rejects AnalysisResult objects
 
 import * as fc from 'fast-check'
 import { validateSchema } from '../lib/schema.js'

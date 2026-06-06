@@ -28,7 +28,7 @@ export default function SignUpPage() {
             Your career starts with the right move.
           </h2>
           <p className="text-blue-100 text-base leading-relaxed">
-            CareerShield AI helps you identify real opportunities, measure your readiness, and build the skills to win.
+            Parakh AI helps you identify real opportunities, measure your readiness, and build the skills to win.
           </p>
 
           {/* Feature list */}
@@ -72,7 +72,7 @@ export default function SignUpPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
               </svg>
             </div>
-            <span className="text-lg font-bold text-gray-900">CareerShield <span className="text-blue-600">AI</span></span>
+            <span className="text-lg font-bold text-gray-900">Parakh <span className="text-blue-600">AI</span></span>
           </Link>
         </div>
 
